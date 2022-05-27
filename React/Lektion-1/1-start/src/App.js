@@ -18,8 +18,10 @@ const App = () => {
     <div>
       <h1>Hello World</h1>
       <button onClick={() => { onClick('Dania') }} >Tryck här</button>
-      <Person />
-      <Person />
+      <Person name="Dania" age="35" />
+      <Person name="Zain" age="8" />
+      <Person name="Laya" age="5" />
+
 
     </div>
 
