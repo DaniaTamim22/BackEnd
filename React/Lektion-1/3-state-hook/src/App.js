@@ -71,7 +71,7 @@ const App = () => {
           <Post key={post.id} title={post.title} body={post.body} />
         ))}
 
-        <button onClick={toggleLogin}>Login</button>
+        <button onClick={toggleLogin}>{isLoggedIn ? 'Logout' : 'Login'}</button>
         {/* <div className="card"> Hej</div> */}
       </div>
     </div>
