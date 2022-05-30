@@ -1,11 +1,12 @@
 import './App.css';
 import Book from './components/Book';
 import { useState } from 'react';
+import Navbar from './components/Navbar';
 
 const App = () => {
 
 
-  const books = useState([
+  const [books] = useState([
     {
       id: 1,
       title: 'Book title 1',
@@ -27,7 +28,7 @@ const App = () => {
 
   return (
     <div className="container">
-
+      <Navbar />
       {books.map(book => (
         <Book key={book.id} title={book.title} body={book.body} />
       ))}
