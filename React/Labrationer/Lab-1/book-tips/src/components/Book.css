@@ -13,3 +13,12 @@
     color: rgb(74, 2, 61);
 
 }
+
+
+.card {
+    flex: content;
+    flex-direction: center;
+}
+.marked{
+    border: 3px solid red;
+}

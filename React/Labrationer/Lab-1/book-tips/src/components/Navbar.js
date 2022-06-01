@@ -3,11 +3,13 @@ import { useState } from 'react'
 
 const Navbar = () => {
 
-    const [isLoggedIn, setisLoggedIn] = useState(false)
+    const [isLoggedIn, setIsLoggedIn] = useState(false)
 
 
 
-    const userLogin = (name) => {
+    const userLogin = () => {
+
+        setIsLoggedIn(state => !state)
         // console.log('welcome ' + name + '!')
 
 
@@ -15,7 +17,7 @@ const Navbar = () => {
     return (
         <div className='navbar d-flex'>
             <h1>Book tips</h1>
-            <button className='btn btn-primary' onClick={userLogin('Dania')}>{isLoggedIn ? 'Login' : 'Welcome Dania!'}</button>
+            <button className='btn btn-primary' onClick={userLogin}>{isLoggedIn ? 'Welcome Dania!' : 'Login'}</button>
 
         </div>
     )
