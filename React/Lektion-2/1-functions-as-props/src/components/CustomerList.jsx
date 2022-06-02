@@ -15,6 +15,14 @@ const CustomerList = ({ customers, removeCustomer }) => {
 					{customers.map((customer) => (
 						<CustomerRow key={customer.id} customer={customer} removeCustomer={removeCustomer} />
 					))}
+
+					{!customers.length && (
+						<tr>
+							<td>No customers to show</td>
+							<td />
+							<td />
+						</tr>
+					)}
 				</tbody>
 			</table>
 		</div>
