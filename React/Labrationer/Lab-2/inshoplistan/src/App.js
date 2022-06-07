@@ -59,6 +59,7 @@ function App() {
 
   const clearList = () => {
     setItems([])
+    setShowModal(false)
   }
 
   return (
@@ -66,7 +67,7 @@ function App() {
       <Header title='Shopping List' openModal={setShowModal} />
       <ShoppingList items={items} toggleComplete={toggleComplete} deleteItem={deleteItem} changeItem={changeItem} />
       <AddItemForm addItem={addItem} />
-      {showModal && <Modal />}
+      {showModal && <Modal clearList={clearList} setShowModal={setShowModal} />}
     </div>
   );
 }
