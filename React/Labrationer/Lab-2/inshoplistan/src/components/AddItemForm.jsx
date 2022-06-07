@@ -1,7 +1,7 @@
 import { useState,useRef } from 'react';
 
 const AddItemForm = ({ addItem }) => {
-	
+
 	const [ productTitle, setProductTitle ] = useState('');
 	const [ error, setError ] = useState(false);
 
@@ -20,7 +20,7 @@ const AddItemForm = ({ addItem }) => {
 				
 	};
 
-
+	
 	return (
 		<>
 		<form className="AddItemForm" onSubmit={handleSubmit}>

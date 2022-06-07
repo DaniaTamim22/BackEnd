@@ -109,3 +109,31 @@ body {
 	margin: .5rem;
 	text-align: center;
 }
+
+.ChangeItem input {
+	border: 0;
+	outline: 0;
+	font-size: 1rem;
+}
+
+.btn-check {
+	font-size: 1rem;
+}
+
+.btn-check:hover {
+	color: rgb(0, 169, 39);
+}
+
+.modal-bg {
+	background-color: #000000;
+	position: fixed;
+	inset: 0;
+}
+.modal {
+	background-color: #fff;
+	max-width: 75%;
+	margin: 5rem auto;
+	padding: 1rem;
+	border-radius: 1rem;
+	box-shadow: 2px 2px 5px #00000040;
+}

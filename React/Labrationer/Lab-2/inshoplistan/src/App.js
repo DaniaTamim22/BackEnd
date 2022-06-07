@@ -3,9 +3,11 @@ import { v4 as uuidv4 } from 'uuid';
 import './App.css';
 import AddItemForm from './components/AddItemForm';
 import Header from './components/Header';
+import Modal from './components/Modal';
 import ShoppingList from './components/ShoppingList';
 
 function App() {
+  const [showModal, setShowModal] = useState(false)
 
   const [items, setItems] = useState([
     {
@@ -46,12 +48,25 @@ function App() {
     })
   }
 
+  const deleteItem = id => {
+    setItems(state => state.filter(item => item.id !== id))
+  }
+
+  const changeItem = (item, newText) => {
+    item.product = newText
+    setItems(state => [...state])
+  }
+
+  const clearList = () => {
+    setItems([])
+  }
 
   return (
     <div className=" App container">
-      <Header title='Shopping List' />
-      <ShoppingList items={items} toggleComplete={toggleComplete} />
+      <Header title='Shopping List' openModal={setShowModal} />
+      <ShoppingList items={items} toggleComplete={toggleComplete} deleteItem={deleteItem} changeItem={changeItem} />
       <AddItemForm addItem={addItem} />
+      {showModal && <Modal />}
     </div>
   );
 }
