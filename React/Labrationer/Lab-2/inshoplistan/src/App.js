@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import './App.css';
 import AddItemForm from './components/AddItemForm';
@@ -32,10 +32,23 @@ function App() {
     }
   ]);
 
+
+  useEffect(() => {
+    const storedItems = JSON.parse(localStorage.getItem('listItems'))
+    if (storedItems?.length) {
+      setItems(storedItems)
+    }
+  }, [])
+
+  useEffect(() => {
+    localStorage.setItem('listItems', JSON.stringify(items))
+  })
+
   const addItem = product => {
     setItems(state => {
       return [{ id: uuidv4(), product, completed: false }, ...state]
     })
+    // localStorage.setItem('listItems', JSON.stringify(items))
 
   }
 
@@ -46,15 +59,18 @@ function App() {
       state.sort((a, b) => a.completed - b.completed)
       return [...state]
     })
+    // localStorage.setItem('listItems', JSON.stringify(items))
   }
 
   const deleteItem = id => {
     setItems(state => state.filter(item => item.id !== id))
+    // localStorage.setItem('listItems', JSON.stringify(items))
   }
 
   const changeItem = (item, newText) => {
     item.product = newText
     setItems(state => [...state])
+    // localStorage.setItem('listItems', JSON.stringify(items))
   }
 
   const clearList = () => {

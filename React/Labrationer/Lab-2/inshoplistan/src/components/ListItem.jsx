@@ -23,7 +23,7 @@ const ListItem = ({ item, toggleComplete, deleteItem, changeItem }) => {
 			)}
 			<div className="buttons">
 				<button className="btn btn-change" onClick={toggleChange}>
-					<i class="fa-solid fa-pen" />
+					<i className="fa-solid fa-pen" />
 				</button>
 				<button
 					className="btn btn-delete"
@@ -31,7 +31,7 @@ const ListItem = ({ item, toggleComplete, deleteItem, changeItem }) => {
 						deleteItem(item.id);
 					}}
 				>
-					<i class="fa-solid fa-trash" />
+					<i className="fa-solid fa-trash" />
 				</button>
 			</div>
 		</div>
