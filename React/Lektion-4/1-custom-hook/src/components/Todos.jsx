@@ -17,7 +17,7 @@ const Todos = () => {
 	// 	[ url ]
 	// );
 
-	const { data: todos, loading, error } = useFetch(url);
+	const { data: todos, loading, error } = useFetch(url, { type: 'GET' });
 	return (
 		<div className="todo-list">
 			<button onClick={() => setUrl('https://jsonplaceholder.typicode.com/todos')}>all users</button>
